@@ -1,0 +1,112 @@
+-- question 1
+-- how many actors w last name 'Wahlberg'
+
+SELECT first_name, last_name
+FROM actor
+WHERE last_name = 'Wahlberg';
+
+answer: 2
+
+
+
+-- question 2
+-- how many payments were made between 3.99 and 5.99
+--SELECT customer_id,amount
+--FROM payment
+--WHERE amount BETWEEN 3.99 AND 5.99;
+
+-- question 3
+--what film does the store have the most of?
+SELECT film_id, COUNT(film_id)
+FROM inventory
+GROUP BY film_id
+ORDER BY COUNT(film_id) DESC;
+
+-- answer:72 films have the highest amount of 8
+
+
+
+
+
+--question 4
+-- how many customers have the last name 'william'?
+SELECT first_name, last_name
+FROM customer
+WHERE last_name = 'Williams';
+
+--answer: its 'williams' and 1
+
+--question 5
+-- what store employee sold the most rentals?
+SELECT staff_id, COUNT(staff_id)
+FROM rental
+GROUP BY staff_id
+ORDER BY COUNT(staff_id) DESC;
+
+-- answer: staff_id 1
+
+-- question 6
+-- how many different district names are there?
+SELECT district, COUNT(district)
+FROM address
+GROUP BY district;
+
+--answer:378
+
+-- question 7
+-- what film has the most actors in it?
+SELECT film_id, COUNT(actor_id)
+FROM film_actor
+GROUP BY film_id 
+ORDER BY COUNT (actor_id) DESC;
+-- answer: film 508 has 15 actors
+
+-- question 8
+-- from store-ID1, how many customers have a last name ending in "es"
+SELECT store_id, last_name
+FROM customer
+WHERE last_name LIKE '%es';
+
+--answer:13
+
+--question 9
+--SELECT (customer_id), (rental_id)
+--FROM payment
+--WHERE customer_id BETWEEN 380 AND 430
+--GROUP BY rental_id > 250;
+
+-- CONFUSED ON THIS ONE
+
+
+
+--QUESTION 10
+
+-- within the film table, how many rating categories are there? and what has the most films?
+SELECT rating,COUNT(rating)
+FROM film
+GROUP BY rating 
+ORDER BY COUNT(rating)DESC
+
+
+
+
+-- 5 ratings categories 
+-- PG-13 has most movies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
